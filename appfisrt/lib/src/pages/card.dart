@@ -17,7 +17,6 @@ class MyCard extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(0, 40, 0, 30),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Container(
@@ -29,7 +28,7 @@ class MyCard extends StatelessWidget {
             ),
             Expanded(
                 child: Container(
-                    padding: EdgeInsets.all(responsive.obtenerDiagonal(3)),
+                    padding: EdgeInsets.all(responsive.obtenerDiagonal(4)),
                     width: responsive.width,
                     height: responsive.height,
                     alignment: Alignment.center,

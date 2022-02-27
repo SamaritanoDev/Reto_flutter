@@ -12,8 +12,8 @@ class Calificate extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Flexible(
-          flex: 2,
-          fit: FlexFit.loose,
+          flex: 3,
+          fit: FlexFit.tight,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -32,9 +32,9 @@ class Calificate extends StatelessWidget {
         ),
         Flexible(
           flex: 1,
-          fit: FlexFit.loose,
+          fit: FlexFit.tight,
           child: Text(
-            '170 Reviews',
+            '170 Review',
             style: TextStyle(
                 fontWeight: FontWeight.w800,
                 letterSpacing: responsive.obtenerDiagonal(0.01),
