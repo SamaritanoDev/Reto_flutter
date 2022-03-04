@@ -28,8 +28,8 @@ class CardSwiper extends StatelessWidget {
 }
 
 class _Slide extends StatelessWidget {
-  const _Slide(svg, {Key? key}) : super(key: key);
-  final String svg = 'assets/images/coffeefour.jpg';
+  const _Slide(this.svg, {Key? key}) : super(key: key);
+  final String svg;
   @override
   Widget build(BuildContext context) {
     return FadeInImage(
