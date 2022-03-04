@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: 'banner',
       routes: {
-        'banner' : (_)=> const SlideShowScreen(),
+        '/banner' : (_)=> const SlideShowScreen(),
+        '/home'   : (_) => const SlideShowScreen() 
       },
     );
   }

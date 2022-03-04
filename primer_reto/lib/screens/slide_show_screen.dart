@@ -18,9 +18,27 @@ class SlideShowScreen extends StatelessWidget {
             BannerCoffe(),
             Slides(),
             Dots(),
+            ButtonLarge('Empezar'),
           ],
         ),
       ),
+    );
+  }
+}
+
+class BannerTwo extends StatelessWidget {
+  const BannerTwo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 30,
+      height: 30,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/bannertwo.png'), fit: BoxFit.contain)),
     );
   }
 }
