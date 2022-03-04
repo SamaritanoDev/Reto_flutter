@@ -108,9 +108,9 @@ class _SlidesState extends State<_Slides> {
 }
 
 class _Slide extends StatelessWidget {
-  final String svg = 'assets/images/bannerone.jpg';
+  final String url;
 
-  const _Slide(svg);
+  const _Slide(this.url);
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class _Slide extends StatelessWidget {
       padding: const EdgeInsets.all(0),
       child: FadeInImage(
           placeholder: const AssetImage('assets/gif/coffee.gif'),
-          image: AssetImage(svg)),
+          image: AssetImage(url)),
     );
   }
 }
