@@ -98,7 +98,7 @@ class _Dot extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
           color: (pageViewIndex >= index - 0.5 && pageViewIndex < index + 0.05)
-              ? AppTheme.colorprimary
+              ? colorprimary
               : Colors.grey,
           shape: BoxShape.circle),
     );

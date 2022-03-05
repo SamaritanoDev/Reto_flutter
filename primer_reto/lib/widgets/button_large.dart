@@ -15,21 +15,22 @@ class ButtonLarge extends StatelessWidget {
     return Align(
       alignment: const Alignment(0, 0.65),
       child: InkWell(
-        onTap: (() => Navigator.pushNamed(context, '/home')),
+        onTap: (() => Navigator.pushNamed(context, 'home')),
         child: Container(
           width: responsive.obtenerAncho(70),
           height: responsive.obtenerAlto(8),
           decoration: BoxDecoration(
-            color: AppTheme.colorprimary,
+            color: colorprimary,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(
-            child: Text('Empezar',
-                textAlign: TextAlign.center,
+            child: Text(text,
+                textAlign: textcenter,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: responsive.obtenerDiagonal(2.0),
-                )),
+                ),
+            ),
           ),
         ),
       ),

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:primer_reto/theme/theme.dart';
+//import 'package:primer_reto/theme/theme.dart';
 
 import '../utils/responsive.dart';
 
 class ButtonIcon extends StatelessWidget {
   final String text;
   final Icon? icon;
+  final Color? colorBoton;
 
   const ButtonIcon(
     this.text,
     this.icon,
+    this.colorBoton,
     {Key? key}) : super(key: key);
 
   @override
@@ -22,14 +24,14 @@ class ButtonIcon extends StatelessWidget {
         width: responsive.obtenerAncho(70),
         height: responsive.obtenerAlto(8),
         decoration: BoxDecoration(
-          color: AppTheme.colorprimary,
+          color: colorBoton,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
           child: Text('Empezar',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: responsive.obtenerDiagonal(2.0),
               )),
         ),

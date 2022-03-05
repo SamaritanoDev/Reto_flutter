@@ -38,7 +38,9 @@ class BannerTwo extends StatelessWidget {
       height: 30,
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/bannertwo.png'), fit: BoxFit.contain)),
+              image: AssetImage('assets/bannertwo.png'), 
+              fit: BoxFit.contain,),
+          ),
     );
   }
 }

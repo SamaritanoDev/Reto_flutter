@@ -39,10 +39,10 @@ class SlidesState extends State<Slides> {
       children: const [
         _SlideText('Café tan bueno que a tus papilas gustativas les encantará',
             'El mejor grano, el asado más apto, el sabor más potente.'),
-        _SlideText('Café tan bueno que a tus papilas gustativas les encantará',
-            'El mejor grano, el asado más apto, el sabor más potente.'),
-        _SlideText('Café tan bueno que a tus papilas gustativas les encantará',
-            'El mejor grano, el asado más apto, el sabor más potente.'),
+        _SlideText(
+            'Café que inspira amor y amistad', 'El mejor lugar para degustar.'),
+        _SlideText('Café que te conquista cada día',
+            'Siempre y cuando tu lo quieras.'),
       ],
     );
   }
@@ -65,14 +65,14 @@ class _SlideText extends StatelessWidget {
         children: [
           Text(
             title,
-            textAlign: TextAlign.center,
+            textAlign: textcenter,
             style: TextStyle(
                 fontSize: responsive.obtenerAlto(3),
                 fontWeight: FontWeight.bold),
           ),
           Text(
             subtitle,
-            textAlign: TextAlign.center,
+            textAlign: textcenter,
             style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: responsive.obtenerAlto(2)),
@@ -88,11 +88,11 @@ class Dots extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: SizedBox(
-        width: double.infinity,
-        height: 70,
+    return SizedBox(
+      width: double.infinity,
+      height: 70,
+      child: Align(
+        alignment: const Alignment(0, 14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -125,7 +125,7 @@ class _Dot extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
           color: (pageViewIndex >= index - 0.5 && pageViewIndex < index + 0.05)
-              ? AppTheme.colorprimary
+              ? colorprimary
               : Colors.grey,
           shape: BoxShape.circle),
     );
