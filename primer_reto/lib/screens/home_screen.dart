@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: responsive.obtenerAlto(3),
                   ),
                 ),
-                const CategoriesSlide(),
+                const CardsCategory(),
                 SizedBox(
                   height: responsive.obtenerAlto(3),
                 ),
@@ -52,7 +52,6 @@ class HomeScreen extends StatelessWidget {
                     fontSize: responsive.obtenerAlto(3),
                   ),
                 ),
-                const CategoriesSlide(),
               ],
             ),
           ),
