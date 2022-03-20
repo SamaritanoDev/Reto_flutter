@@ -3,15 +3,16 @@ import 'package:provider/provider.dart';
 
 import '../models/slider_model.dart';
 import '../theme/theme.dart';
+import '../utils/responsive.dart';
 
-class Slides extends StatefulWidget {
-  const Slides({Key? key}) : super(key: key);
+class SlidesImage extends StatefulWidget {
+  const SlidesImage({Key? key}) : super(key: key);
 
   @override
-  State<Slides> createState() => SlidesState();
+  State<SlidesImage> createState() => SlidesImageState();
 }
 
-class SlidesState extends State<Slides> {
+class SlidesImageState extends State<SlidesImage> {
   final pageViewController = PageController();
 
   @override
@@ -35,24 +36,57 @@ class SlidesState extends State<Slides> {
     return PageView(
       controller: pageViewController,
       children: const [
-        _Slide('assets/images/coffeone.jpg'),
-        _Slide('assets/images/coffeetwo.jpg'),
-        _Slide('assets/images/coffeethree.jpg'),
+        _Slide(
+            'assets/images/bannertwo.png',
+            'Café tan bueno que a tus papilas gustativas les encantará',
+            'El mejor grano, el asado más apto, el sabor más potente.'),
+        _Slide('assets/images/coffeetwo.jpg', 'Café que te conquista cada día',
+            'Siempre y cuando tu lo quieras.'),
+        _Slide('assets/images/coffeone.jpg', 'Café con el mejor sabor',
+            'Del País y del Mundo.'),
       ],
     );
   }
 }
 
 class _Slide extends StatelessWidget {
+  final String title;
+  final String subtitle;
   final String url;
 
-  const _Slide(this.url);
+  const _Slide(this.url, this.title, this.subtitle);
 
   @override
   Widget build(BuildContext context) {
-    return Image(
-        //fit: BoxFit.cover,
-        image: AssetImage(url));
+    final Responsive responsive = Responsive.of(context);
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: responsive.obtenerAnchoShort(50),
+          height: responsive.obtenerAltoLong(30),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(url),
+            ),
+          ),
+        ),
+        Text(
+          title,
+          textAlign: textcenter,
+          style: TextStyle(
+              fontSize: responsive.obtenerAlto(3), fontWeight: FontWeight.bold),
+        ),
+        Text(
+          subtitle,
+          textAlign: textcenter,
+          style: TextStyle(
+              fontWeight: FontWeight.w400, fontSize: responsive.obtenerAlto(2)),
+        ),
+      ],
+    );
   }
 }
 

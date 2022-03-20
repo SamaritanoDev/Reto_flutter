@@ -13,23 +13,48 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const AppBarSearch(),
-              Text(
-                'Buen día, SamaritanoDev',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: responsive.obtenerAlto(2),
+          child: Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const AppBarSearch(),
+                Text(
+                  'Buen día, SamaritanoDev',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: responsive.obtenerAlto(3),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: responsive.obtenerAlto(3),
-              ),
-              const Search(),
-              const CategoriesSlide('Categorias'),
-            ],
+                SizedBox(
+                  height: responsive.obtenerAlto(3),
+                ),
+                const Search(),
+                SizedBox(
+                  height: responsive.obtenerAlto(3),
+                ),
+                Text(
+                  'Categoria',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: responsive.obtenerAlto(3),
+                  ),
+                ),
+                const CategoriesSlide(),
+                SizedBox(
+                  height: responsive.obtenerAlto(3),
+                ),
+                Text(
+                  'Ofertas',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: responsive.obtenerAlto(3),
+                  ),
+                ),
+                const CategoriesSlide(),
+              ],
+            ),
           ),
         ),
       ),

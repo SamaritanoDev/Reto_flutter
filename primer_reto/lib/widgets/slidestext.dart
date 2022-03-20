@@ -6,14 +6,14 @@ import '../models/slider_model.dart';
 import '../theme/theme.dart';
 import '../utils/responsive.dart';
 
-class Slides extends StatefulWidget {
-  const Slides({Key? key}) : super(key: key);
+class SlidesText extends StatefulWidget {
+  const SlidesText({Key? key}) : super(key: key);
 
   @override
-  State<Slides> createState() => SlidesState();
+  State<SlidesText> createState() => SlidesTextState();
 }
 
-class SlidesState extends State<Slides> {
+class SlidesTextState extends State<SlidesText> {
   final pageViewController = PageController();
 
   @override
@@ -83,8 +83,8 @@ class _SlideText extends StatelessWidget {
   }
 }
 
-class Dots extends StatelessWidget {
-  const Dots({Key? key}) : super(key: key);
+class DotsText extends StatelessWidget {
+  const DotsText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

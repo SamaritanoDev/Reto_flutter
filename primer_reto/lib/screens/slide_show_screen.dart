@@ -14,33 +14,17 @@ class SlideShowScreen extends StatelessWidget {
       create: (_) => SliderModel(),
       child: Scaffold(
         body: Stack(
-          children: const [
-            BannerCoffe(),
-            Slides(),
-            Dots(),
-            ButtonLarge('Empezar'),
+          children: [
+            const BannerCoffe(),
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: const SlidesImage(),
+            ),
+            const Dots(),
+            const ButtonLarge('Empezar'),
           ],
         ),
       ),
-    );
-  }
-}
-
-class BannerTwo extends StatelessWidget {
-  const BannerTwo({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 30,
-      height: 30,
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/bannertwo.png'), 
-              fit: BoxFit.contain,),
-          ),
     );
   }
 }

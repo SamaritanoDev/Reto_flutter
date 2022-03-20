@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CardCoffe extends StatelessWidget {
+class CardCategory extends StatelessWidget {
   final NetworkImage url;
   final String? title;
   final String? subtitle;
+  final double? price;
 
-  const CardCoffe(this.url, this.title, this.subtitle, {Key? key})
+  const CardCategory(this.url, this.title, this.subtitle, this.price, {Key? key})
       : super(key: key);
 
   @override
@@ -14,7 +15,7 @@ class CardCoffe extends StatelessWidget {
       child: Column(
         children: [
           FadeInImage(
-            placeholder: const AssetImage('assets/gif/coffee.gif'),
+            placeholder: const AssetImage('assets/images/coffee-cup.png'),
             image: url,
             width: double.infinity,
             height: 230,
