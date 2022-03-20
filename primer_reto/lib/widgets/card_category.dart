@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:primer_reto/theme/theme.dart';
 
+import '../theme/theme.dart';
 import '../utils/responsive.dart';
 
 class CardsCategory extends StatelessWidget {
@@ -41,10 +41,15 @@ class CardCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive.of(context);
+
     return Card(
-      color: colorsecondary,
-      child: Column(
-        children: [
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      child: Container(
+        width: responsive.obtenerDiagonal(20),
+        height: responsive.obtenerDiagonal(70),
+        color: Colors.white60,
+        child: Stack(children: [
           FadeInImage(
             placeholder: const AssetImage('assets/images/coffee-cup.png'),
             image: url,
@@ -55,8 +60,28 @@ class CardCategory extends StatelessWidget {
           ),
           Text(title),
           Text(subtitle),
-          Text('$price')
-        ],
+          Text('$price'),
+          const _BotonAdd(),
+        ]),
+      ),
+    );
+  }
+}
+
+class _BotonAdd extends StatelessWidget {
+  const _BotonAdd({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        color: colorprimary,
+        shape: BoxShape.circle,
+      ),
+      child: IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.add),
+        color: Colors.white,
       ),
     );
   }

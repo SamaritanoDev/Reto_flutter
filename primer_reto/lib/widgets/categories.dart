@@ -17,11 +17,7 @@ class CategoriesSlide extends StatelessWidget {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 3,
-          itemBuilder: ((context, index) => const _SlideCoffee(
-                'Cappucino',
-                'Café y leche',
-                7.5,
-              )),
+          itemBuilder: ((context, index) => const _SlideCoffee()),
         ),
       ),
     );
@@ -29,11 +25,7 @@ class CategoriesSlide extends StatelessWidget {
 }
 
 class _SlideCoffee extends StatelessWidget {
-  final String name;
-  final String description;
-  final double price;
-  const _SlideCoffee(this.name, this.description, this.price, {Key? key})
-      : super(key: key);
+  const _SlideCoffee({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
